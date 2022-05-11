@@ -6,3 +6,13 @@ const LANGUAGE = "language=ru-RU";
 
 //units=imperial - Fahrenheit / Celsius use units=metric
 
+const getDate = (url) => {
+	return fetch(url, {
+		method: "GET",
+	})
+		.then(response => {
+			if (response.ok) return response.json();
+			throw `Error: ${response.status}`;
+		})
+		.catch(err => console.error(err));
+}
