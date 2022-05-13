@@ -74,5 +74,28 @@ h1, h2, h3, h4, h5, h6 {
 
 /*--------------------*/
 body {
-  background-color: #323232;
+  background-color: #343131;
 }
+
+#map {
+	position: relative;
+	width: 300px;
+	height: 300px;
+}
+
+/* [class*="ymaps-copyrights-pane"] {
+	display: none !important;
+} */
+
+[class*="ymaps-layers-pane"] {
+	filter: grayscale(1);
+}
+
+/* #map ymaps {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+} */

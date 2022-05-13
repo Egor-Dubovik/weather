@@ -7,7 +7,3 @@ const weather = new Weather;
 
 
 
-
-
-
-
