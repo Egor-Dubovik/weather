@@ -28,6 +28,36 @@ export class Weather {
 			lon: pos.coords.longitude
 		}
 	}
+
+	async showForecast() {
+		// weatherBlock.innerHTML = `
+		// <div class="weather">
+		// 	<img src="./assets/img/load.gif" alt="Loading...">
+		// </div>	
+		// `;
+
+
+
+
+		const { lat, lon } = await this.getCurrentСoords();
+		const data = await this.getForecast(lat, lon, "metric");
+
+		console.log(data)
+
+
+
+		// let b = await a.json();
+		// const name = data.city.name;
+		// const temp = data.;
+		// const tempMax = data.;
+		// const tempMin = data.;
+		// const feelsLike = data.;
+		// const description = data.;
+		// const description = data.;
+
+		// console.log(geocoder);
+		// return data
+	};
 }
 
 

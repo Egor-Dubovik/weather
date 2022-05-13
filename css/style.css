@@ -77,6 +77,87 @@ body {
   background-color: #343131;
 }
 
+
+.weather-app {
+}
+.weather-app__container {
+}
+.weather-app__logo {
+}
+.weather-app__forcast {
+}
+.forcast {
+}
+.forcast__current-day {
+}
+.current-day {
+}
+.current-day__time {
+}
+.current-day__city {
+}
+.current-day__temp {
+}
+.current-day__description {
+}
+.description-weather {
+}
+.description-weather__text {
+}
+.description-weather__icon {
+}
+.current-day__feels-like {
+}
+.weather-app__future-forecast {
+}
+.future-forecast {
+}
+.future-forecast__item {
+}
+.future-forecast__day {
+}
+.future-forecast__icon {
+}
+.future-forecast__day-temp {
+}
+.future-forecast__night-temp {
+}
+.weather-app__sidebar {
+}
+.sidebar-weather {
+}
+.sidebar-weather__search-form {
+}
+.sidebar-weather__search-input {
+}
+.sidebar-weather__search-btn {
+}
+.sidebar-weather__example-cities {
+}
+.sidebar-weather__map {
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 #map {
 	position: relative;
 	width: 300px;
