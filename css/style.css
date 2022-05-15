@@ -161,18 +161,19 @@ body {
 .current-day__description {
 	text-align: center;
 }
-.description-weather {
-}
+
 .description-weather__text {
 	font-weight: 600;
 }
 .description-weather__icon {
 }
+
 .current-day__feels-like {
 	grid-column: span 2;
 	font-size: 16px;
 	font-weight: 600;
 }
+
 
 /* future-forecast ---------------------------- */
 .future-forecast {
@@ -202,14 +203,26 @@ body {
 .future-forecast__item :not(:last-child) {
 	margin-bottom: 15px;
 }
+
 .future-forecast__day {
 	display: inline-block;
-	padding: 5px 15px;
+	padding: 10px 20px;
    background: #3C3C44;
    border-radius: 50px;
 }
+.future-forecast__day_today {
+	font-weight: 600;
+	color: rgb(0, 0, 0);
+	background: rgb(255, 140, 0);
+}
+.future-forecast__track li:first-child {
+	padding: 20px 60px; 
+	border: 1px solid rgba(255, 140, 0, 0.5);
+}
+
 .future-forecast__icon {
 }
+
 .future-forecast__time{
 	text-align: start;
 
@@ -264,12 +277,12 @@ color: #ccc;
 	justify-content: center;
 	align-items: center;
 	background-color: rgb(255, 140, 0);
-	transition: 0.3s ease-out;
+	transition: 0.1s ease-out;
 }
 .sidebar-weather__search-btn span {
 	width: 30px;
 	height: 30px;
-	transition: 0.3s ease-in;
+	transition: 0.1s ease-in;
 	background: url("../assets/img/search.svg") 0 0 / cover no-repeat;
 }
 .sidebar-weather__search-btn:hover {
@@ -292,17 +305,9 @@ color: #ccc;
 }
 
 
-
-@media (max-width: 1400px){
-	.future-forecast {
-		 /* width: 100%;
-		 overflow-y: hidden;  */
-	}
-}
-
 @media (max-width: 992px){
 	.future-forecast__track {
-		overflow-x: auto;
+		overflow-x: scroll;
 		width: 100%;
 	}
 }
@@ -319,6 +324,7 @@ color: #ccc;
 
 	.future-forecast__track {
 		margin-bottom: 30px;
+		left: 0 !important;
 	}
 
 	.sidebar-weather {

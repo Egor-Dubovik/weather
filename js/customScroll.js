@@ -1,14 +1,16 @@
 const futureForecast = document.querySelector(".future-forecast");
 const forecasTrack = document.querySelector(".future-forecast__track");
-const forecastItem = document.querySelector(".future-forecast__item");
+
 
 const customScroll = (e) => {
 	const clientWidth = document.documentElement.clientWidth;
 
-	if (clientWidth > 992) {
+	if (clientWidth > 768) {
 		const leftPosition = getPosition(forecasTrack, "left");
+		const forecastItem = document.querySelector(".future-forecast__item");
 		let itemWidth = getPosition(forecastItem, "width");
-		clientWidth >= 1280 ? itemWidth *= 3 : itemWidth *= 4.2;
+
+		clientWidth >= 1280 ? itemWidth *= 3.5 : itemWidth *= 5.3;
 		const step = 35;
 
 		if (e.deltaY < 0 && e.altKey === false) {

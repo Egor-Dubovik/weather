@@ -22,19 +22,19 @@
 			<section class="weather-app__forcast forcast">
 				<h1 class="forcast__logo">the weather</h1>
 				<ul class="forcast__current-day current-day">
-					<li class="current-day__time">3:35<span>PM</span></li>
+					<li class="current-day__time"><span>3:35</span>PM</li>
 					<li class="current-day__city">Minsk</li>
 					<li class="current-day__date">Monday, 24 May</li>
 					<li class="current-day__temp">17°</li>
-					<li class="current-day__description">
-						<ul class="description-weather">
-							<li class="description-weather__text">sunny</li>
-							<li class="description-weather__icon">
-								<img src="http://openweathermap.org/img/wn/10d@2x.png" alt="weather icon" class="w-icon">
-							</li>
-						</ul>
+					<li class="current-day__description description-weather">
+						<p class="description-weather__text">sunny</p>
+						<div class="description-weather__icon">
+							<img src="http://openweathermap.org/img/wn/10d@2x.png" alt="weather icon">
+						</div>
 					</li>
-					<li class="current-day__feels-like">Feels like: 15°</li>
+					<li class="current-day__feels-like">Feels like: <span>15</span></li>
+					<li class="current-day__sunrise">Sunrise: <span>15</span></li>
+					<li class="current-day__sunset">Sunset: <span>15</span></li>
 				</ul>
 				<div class="forcast__future-forecast future-forecast">
 					<ul class="future-forecast__track">
@@ -112,9 +112,10 @@
 			</section>
 		</div>
 	</div>
-
-	<script
-		src="https://api-maps.yandex.ru/2.0-stable/?apikey=e043db48-2b20-4ec4-90ba-fdf04488650c&load=package.standard&lang=ru-RU"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.3/moment.min.js" crossorigin="anonymous"
+		referrerpolicy="no-referrer"></script>
+	<!-- <script
+		src="https://api-maps.yandex.ru/2.0-stable/?apikey=e043db48-2b20-4ec4-90ba-fdf04488650c&load=package.standard&lang=ru-RU"></script> -->
 	<script type="module" src="./js/script.js"></script>
 	<script src="./js/customScroll.js"></script>
 </body>
