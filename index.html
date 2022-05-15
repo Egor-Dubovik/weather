@@ -6,6 +6,10 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>weather forecast</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=PT+Sans+Caption&display=swap"
+		rel="stylesheet">
 	<link rel="stylesheet" href="./css/style.css">
 	<!-- <link rel="shortcut icon" href="./assets/img/favicon.ico" type="imag/x-icon"> -->
 
@@ -13,85 +17,91 @@
 
 <body>
 	<div class="weather-app">
+		<div class="weather-app__blackout"></div>
 		<div class="weather-app__container">
-			<h1 class="weather-app__logo">the weather</h1>
 			<section class="weather-app__forcast forcast">
+				<h1 class="forcast__logo">the weather</h1>
 				<ul class="forcast__current-day current-day">
 					<li class="current-day__time">3:35<span>PM</span></li>
 					<li class="current-day__city">Minsk</li>
+					<li class="current-day__date">Monday, 24 May</li>
 					<li class="current-day__temp">17°</li>
 					<li class="current-day__description">
 						<ul class="description-weather">
 							<li class="description-weather__text">sunny</li>
-							<li class="description-weather__icon">icon</li>
+							<li class="description-weather__icon">
+								<img src="http://openweathermap.org/img/wn/10d@2x.png" alt="weather icon" class="w-icon">
+							</li>
 						</ul>
 					</li>
-					<li class="current-day__feels-like">15°</li>
+					<li class="current-day__feels-like">Feels like: 15°</li>
 				</ul>
-				<ul class="weather-app__future-forecast future-forecast">
-					<li class="future-forecast__item">
-						<h2 class="future-forecast__day">sat</h2>
-						<div class="future-forecast__icon">
-							<img src="http://openweathermap.org/img/wn/10d@2x.png" alt="weather icon" class="w-icon">
-						</div>
-						<p class="future-forecast__day-temp">Day: 8.79°C</p>
-						<p class="future-forecast__night-temp">Night: 8.79°C</p>
-					</li>
-					<li class="future-forecast__item">
-						<h2 class="future-forecast__day">sat</h2>
-						<div class="future-forecast__icon">
-							<img src="http://openweathermap.org/img/wn/10d@2x.png" alt="weather icon" class="w-icon">
-						</div>
-						<p class="future-forecast__day-temp">Day: 8.79°C</p>
-						<p class="future-forecast__night-temp">Night: 8.79°C</p>
-					</li>
-					<li class="future-forecast__item">
-						<h2 class="future-forecast__day">sat</h2>
-						<div class="future-forecast__icon">
-							<img src="http://openweathermap.org/img/wn/10d@2x.png" alt="weather icon" class="w-icon">
-						</div>
-						<p class="future-forecast__day-temp">Day: 8.79°C</p>
-						<p class="future-forecast__night-temp">Night: 8.79°C</p>
-					</li>
-					<li class="future-forecast__item">
-						<h2 class="future-forecast__day">sat</h2>
-						<div class="future-forecast__icon">
-							<img src="http://openweathermap.org/img/wn/10d@2x.png" alt="weather icon" class="w-icon">
-						</div>
-						<p class="future-forecast__day-temp">Day: 8.79°C</p>
-						<p class="future-forecast__night-temp">Night: 8.79°C</p>
-					</li>
-					<li class="future-forecast__item">
-						<h2 class="future-forecast__day">sat</h2>
-						<div class="future-forecast__icon">
-							<img src="http://openweathermap.org/img/wn/10d@2x.png" alt="weather icon" class="w-icon">
-						</div>
-						<p class="future-forecast__day-temp">Day: 8.79°C</p>
-						<p class="future-forecast__night-temp">Night: 8.79°C</p>
-					</li>
-					<li class="future-forecast__item">
-						<h2 class="future-forecast__day">sat</h2>
-						<div class="future-forecast__icon">
-							<img src="http://openweathermap.org/img/wn/10d@2x.png" alt="weather icon" class="w-icon">
-						</div>
-						<p class="future-forecast__day-temp">Day: 8.79°C</p>
-						<p class="future-forecast__night-temp">Night: 8.79°C</p>
-					</li>
-					<li class="future-forecast__item">
-						<h2 class="future-forecast__day">sat</h2>
-						<div class="future-forecast__icon">
-							<img src="http://openweathermap.org/img/wn/10d@2x.png" alt="weather icon" class="w-icon">
-						</div>
-						<p class="future-forecast__day-temp">Day: 8.79°C</p>
-						<p class="future-forecast__night-temp">Night: 8.79°C</p>
-					</li>
-				</ul>
+				<div class="forcast__future-forecast future-forecast">
+					<ul class="future-forecast__track">
+						<li class="future-forecast__item">
+							<h2 class="future-forecast__day">sat</h2>
+							<div class="future-forecast__icon">
+								<img src="http://openweathermap.org/img/wn/10d@2x.png" alt="weather icon" class="w-icon">
+							</div>
+							<p class="future-forecast__time" id="day-time">Day: 8.79°C</p>
+							<p class="future-forecast__time" id="night-time">Night: 8.79°C</p>
+						</li>
+						<li class="future-forecast__item">
+							<h2 class="future-forecast__day">sat</h2>
+							<div class="future-forecast__icon">
+								<img src="http://openweathermap.org/img/wn/10d@2x.png" alt="weather icon" class="w-icon">
+							</div>
+							<p class="future-forecast__time">Day: 8.79°C</p>
+							<p class="future-forecast__time">Night: 8.79°C</p>
+						</li>
+						<li class="future-forecast__item">
+							<h2 class="future-forecast__day">sat</h2>
+							<div class="future-forecast__icon">
+								<img src="http://openweathermap.org/img/wn/10d@2x.png" alt="weather icon" class="w-icon">
+							</div>
+							<p class="future-forecast__time">Day: 8.79°C</p>
+							<p class="future-forecast__time">Night: 8.79°C</p>
+						</li>
+						<li class="future-forecast__item">
+							<h2 class="future-forecast__day">sat</h2>
+							<div class="future-forecast__icon">
+								<img src="http://openweathermap.org/img/wn/10d@2x.png" alt="weather icon" class="w-icon">
+							</div>
+							<p class="future-forecast__time">Day: 8.79°C</p>
+							<p class="future-forecast__time">Night: 8.79°C</p>
+						</li>
+						<li class="future-forecast__item">
+							<h2 class="future-forecast__day">sat</h2>
+							<div class="future-forecast__icon">
+								<img src="http://openweathermap.org/img/wn/10d@2x.png" alt="weather icon" class="w-icon">
+							</div>
+							<p class="future-forecast__time">Day: 8.79°C</p>
+							<p class="future-forecast__time">Night: 8.79°C</p>
+						</li>
+						<li class="future-forecast__item">
+							<h2 class="future-forecast__day">sat</h2>
+							<div class="future-forecast__icon">
+								<img src="http://openweathermap.org/img/wn/10d@2x.png" alt="weather icon" class="w-icon">
+							</div>
+							<p class="future-forecast__time">Day: 8.79°C</p>
+							<p class="future-forecast__time">Night: 8.79°C</p>
+						</li>
+						<li class="future-forecast__item">
+							<h2 class="future-forecast__day">sat</h2>
+							<div class="future-forecast__icon">
+								<img src="http://openweathermap.org/img/wn/10d@2x.png" alt="weather icon" class="w-icon">
+							</div>
+							<p class="future-forecast__time">Day: 8.79°C</p>
+							<p class="future-forecast__time">Night: 8.79°C</p>
+						</li>
+					</ul>
+				</div>
 			</section>
 			<section class="weather-app__sidebar sidebar-weather">
 				<form class="sidebar-weather__search-form" action="#">
 					<input class="sidebar-weather__search-input" type="search" name="search" autofocus autocomplete="off"
 						placeholder="Search Location...">
-					<button type="submit" class="sidebar-weather__search-btn"></button>
+					<button type="submit" class="sidebar-weather__search-btn"><span></span></button>
 				</form>
 				<ul class="sidebar-weather__example-cities">
 					<li>St. Petersburg</li>
@@ -106,6 +116,7 @@
 	<script
 		src="https://api-maps.yandex.ru/2.0-stable/?apikey=e043db48-2b20-4ec4-90ba-fdf04488650c&load=package.standard&lang=ru-RU"></script>
 	<script type="module" src="./js/script.js"></script>
+	<script src="./js/customScroll.js"></script>
 </body>
 
 </html>
