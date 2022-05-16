@@ -38,7 +38,6 @@ export class Weather {
 
 		this.lat = pos.coords.latitude;
 		this.lon = pos.coords.longitude;
-		console.log(pos.coords.latitude, pos.coords.longitude);
 	}
 
 	async showForecast() {

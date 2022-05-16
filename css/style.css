@@ -138,12 +138,12 @@ body {
 	border-radius: 10px;
 }
 .current-day__time {
-	font-size: 32px;
+	font-size: 36px;
 	font-weight: 900;
 }
 
 .current-day__time  span {
-	font-size: 28px;
+	font-size: 18px;
 }
 
 .current-day__city {

@@ -17,7 +17,7 @@ let position = [weather.lat, weather.lon];
 const initMap = () => {
 	const map = new ymaps.Map("map", {
 		center: position,
-		zoom: 16,
+		zoom: 10,
 	});
 
 	const placemark = new ymaps.Placemark(position,
@@ -37,7 +37,7 @@ const initMap = () => {
 }
 ymaps.ready(initMap);
 
-//------------------------------------
+// find forecast for new place -------------------------------------------------
 
 const searchForm = document.querySelector(".sidebar-weather__search-form");
 const input = document.querySelector(".sidebar-weather__search-input");
@@ -49,7 +49,6 @@ async function search(e) {
 	const address = await getGeoInfo(input.value);
 	const members = address.response.GeoObjectCollection.featureMember;
 	input.value = "";
-	console.log(address);
 
 	if (!members.length) {
 		alert("Enter right name!");
@@ -70,6 +69,15 @@ async function search(e) {
 	await showCurrentDate(weather.timezone, true);
 }
 
+// ------------------------------------------------------
+const cityExamples = document.querySelector(".sidebar-weather__example-cities");
 
+const showCityExamples = (e) => {
+	if (e.target.closest("li")) {
+		input.value = e.target.textContent;
+		search(e);
+	}
+}
 
+cityExamples.addEventListener("click", showCityExamples);
 
