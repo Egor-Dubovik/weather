@@ -19,14 +19,12 @@ const forecastTrack = document.querySelector(".future-forecast__track");
 export class Weather {
 	#KEY = "107281430eadbfeb34098c3fdc1d890c";
 	#URL = "https://api.openweathermap.org/data/2.5/onecall?";
-	//units=imperial - Fahrenheit / Celsius use units=metric
 
 	constructor() {
 		this.lat;
 		this.lon;
 		this.lang = "language=ru-RU";
 	}
-
 
 	getForecast(lat, lon, unit) {
 		const url = `${this.#URL}lat=${lat}&lon=${lon}&units=${unit}&appid=${this.#KEY}`;
@@ -50,8 +48,8 @@ export class Weather {
 		city.innerHTML = data.timezone.split("/").join("<br>");
 		temp.textContent = Math.round(data.current.temp) + "°";
 		feelsLike.textContent = Math.round(data.current.feels_like) + "°";
-		sunrise.textContent = window.moment(data.current.sunrise * 1000).format("HH:mm a");
-		sunset.textContent = window.moment(data.current.sunset * 1000).format("HH:mm a");
+		sunrise.textContent = window.moment(data.current.sunrise * 1000).format("HH:mm");
+		sunset.textContent = window.moment(data.current.sunset * 1000).format("HH:mm");
 		description.textContent = data.current.weather[0].description;
 
 		const icon = data.current.weather[0].icon;
