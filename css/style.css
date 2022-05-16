@@ -141,8 +141,14 @@ body {
 	font-size: 32px;
 	font-weight: 900;
 }
+
+.current-day__time  span {
+	font-size: 28px;
+}
+
 .current-day__city {
 	font-weight: 600;
+	margin: 0 auto;
 
 }
 .current-day__date {
@@ -314,23 +320,6 @@ color: #ccc;
 	margin: 0 auto;
 	padding-right: 20px;
 }
-
-/* [class*="ymaps-copyrights-pane"] {
-	display: none !important;
-} */
-
-[class*="ymaps-layers-pane"] {
-	filter: grayscale(1);
-}
-
-/* #map ymaps {
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	object-fit: cover;
-} */
 
 
 @media (max-width: 992px){

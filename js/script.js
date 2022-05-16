@@ -7,26 +7,22 @@ import { getGeoInfo } from "./modules/getGeoInfo.js";
 const weather = new Weather;
 await weather.getCurrentСoords();
 
-showCurrentDate();
-console.log(weather.showForecast());
+await weather.showForecast();
+showCurrentDate(weather.timezone);
 
-async function search() {
-	console.log(await getGeoInfo("Минск"));
-}
 
-search();
 
-let center = [59.94, 30.32];
+let position = [weather.lat, weather.lon];
 
 const initMap = () => {
 	const map = new ymaps.Map("map", {
-		center: center,
+		center: position,
 		zoom: 16,
 	});
 
-	const placemark = new ymaps.Placemark(center,
+	const placemark = new ymaps.Placemark(position,
 		{
-			balloonContentHeader: 'Хедер балуна',
+			balloonContentHeader: 'have a good day!',
 		},
 		{
 			iconLayout: 'default#image',
@@ -39,6 +35,41 @@ const initMap = () => {
 	map.controls.add('zoomControl', { top: 10, left: 5 });
 	map.geoObjects.add(placemark);
 }
-
-
 ymaps.ready(initMap);
+
+//------------------------------------
+
+const searchForm = document.querySelector(".sidebar-weather__search-form");
+const input = document.querySelector(".sidebar-weather__search-input");
+
+searchForm.addEventListener("submit", search)
+
+async function search(e) {
+	e.preventDefault();
+	const address = await getGeoInfo(input.value);
+	const members = address.response.GeoObjectCollection.featureMember;
+	input.value = "";
+	console.log(address);
+
+	if (!members.length) {
+		alert("Enter right name!");
+	} else {
+		position = members[0].GeoObject.Point.pos.split(" ");
+		[position[0], position[1]] = [position[1], position[0]];
+
+		weather.lat = position[0];
+		weather.lon = position[1];
+	}
+
+	const map = document.querySelector("#map ymaps");
+	if (map) map.remove();
+
+	ymaps.ready(initMap);
+	clearInterval(window.timerId);
+	await weather.showForecast();
+	await showCurrentDate(weather.timezone, true);
+}
+
+
+
+

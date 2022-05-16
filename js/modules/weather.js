@@ -23,7 +23,7 @@ export class Weather {
 	constructor() {
 		this.lat;
 		this.lon;
-		this.lang = "language=ru-RU";
+		this.timezone;
 	}
 
 	getForecast(lat, lon, unit) {
@@ -38,12 +38,12 @@ export class Weather {
 
 		this.lat = pos.coords.latitude;
 		this.lon = pos.coords.longitude;
+		console.log(pos.coords.latitude, pos.coords.longitude);
 	}
 
 	async showForecast() {
 		const data = await this.getForecast(this.lat, this.lon, "metric");
-
-		console.log(data)
+		this.timezone = data.timezone;
 
 		city.innerHTML = data.timezone.split("/").join("<br>");
 		temp.textContent = Math.round(data.current.temp) + "°";
@@ -54,7 +54,6 @@ export class Weather {
 
 		const icon = data.current.weather[0].icon;
 		weatherIconBox.innerHTML = `<img src="http://openweathermap.org/img/wn/${icon}@2x.png" alt="weather icon">`;
-
 
 		let nextDays = "";
 
